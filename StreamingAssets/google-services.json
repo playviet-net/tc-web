@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "68274479972",
+    "project_id": "pc-pla-ten-match-number-sort",
+    "storage_bucket": "pc-pla-ten-match-number-sort.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68274479972:android:2685e6638eba0cc8c49071",
+        "android_client_info": {
+          "package_name": "com.pl.pv.ten.match.number.sort"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgNYptUNwRzyPslFkjmYZNwn7bupNUnHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
