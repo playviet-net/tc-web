@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body class="dark">
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas"></canvas>
+   <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas"></canvas>
+    </div>
+    <div id="unity-container2" class="unity-desktop">
+        <canvas id="unity-canvas2"></canvas>
     </div>
     <div id="loading-cover" style="display:none;">
       <div id="unity-loading-bar">
@@ -22,6 +25,25 @@
       </div>
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
+		<script>
+        window.addEventListener('resize', function() {
+            if (window.innerHeight > window.innerWidth) {
+                document.getElementById('unity-container2').style.display = 'block';
+                document.getElementById('unity-canvas2').style.display = 'block';
+                
+                document.getElementById('unity-container').style.display = 'none';
+                document.getElementById('unity-canvas').style.display = 'none';
+            } else {
+                document.getElementById('unity-container').style.display = 'block';
+                document.getElementById('unity-canvas').style.display = 'block';
+                
+                document.getElementById('unity-container2').style.display = 'none';
+                document.getElementById('unity-canvas2').style.display = 'none';
+            }
+        });
+
+        window.dispatchEvent(new Event('resize'));
+    </script>
     <script>
       const hideFullScreenButton = "1";
       const buildUrl = "Build";
@@ -36,8 +58,7 @@
         productVersion: "0.0.3",
       };
 
-      const container = document.querySelector("#unity-container");
-      const canvas = document.querySelector("#unity-canvas");
+      let canvas, container;
       const loadingCover = document.querySelector("#loading-cover");
       const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
       const progressBarFull = document.querySelector("#unity-progress-bar-full");
@@ -58,10 +79,16 @@
         }
         return false;
       }());
-
+	if (window.innerHeight > window.innerWidth) {
+        canvas = document.querySelector("#unity-canvas2");
+        container = document.querySelector("#unity-container2");
+      } else {
+        canvas = document.querySelector("#unity-canvas");
+        container = document.querySelector("#unity-container");
+      }
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
-        config.devicePixelRatio = 1;
+        config.devicePixelRatio = 3;
       }
       loadingCover.style.display = "";
 

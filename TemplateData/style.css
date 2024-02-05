@@ -14,13 +14,31 @@ body {
     margin: 0;
 }
 #unity-container {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100vh * (768 / 1024));
+    height: 100vh;
+}
+#unity-canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100vh * (768 / 1024));
+    height: 100vh;
+    background: #CCCCCC;
+}
+#unity-container2 {
     width: 100%;
     height: 100%;
 }
-#unity-canvas {
+
+#unity-canvas2 {
     width: 100%;
     height: 100%;
-    background: #231F20;
+    background: #CCCCCC;
 }
 #loading-cover {
     position: absolute;
@@ -46,7 +64,7 @@ body {
     max-width: 80%;
 }
 #unity-progress-bar-empty {
-    width: 80%;
+    width: 30%;
     height: 24px;
     margin: 10px 20px 20px 10px;
     text-align: left;
